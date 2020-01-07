@@ -1,0 +1,40 @@
+<div class="">
+	<div class="row">
+		<div class="col-2" *ngIf="state == 'closed'">
+			<nav class="navigation">
+				<ul class="mainmenu">
+				
+					<li><a routerLink="/bia/mao">MAO</a></li>
+					<li><a routerLink="/bia/rpo">RPO</a></li>
+					<li><a routerLink="/bia/products">Products</a></li>
+
+					<li><a routerLink="/bia/critical-deadlines">Critical Deadlines</a></li>
+					<li><a routerLink="/bia/critically-definitions">Critically Definitions</a></li>
+					<li><a routerLink="/bia/dependency-types">Dependency types</a></li>
+					<li><a routerLink="/bia/impact-critically-rating">Impact Critically Rating</a></li>
+					<li><a routerLink="/bia/impact-severity-definitions">Impact Severity Definitions</a></li>
+					<li><a routerLink="/bia/impact-types">Impact types</a></li>
+					<li><a routerLink="/bia/internal-ra-answer-types">Internal RA Answer Types</a></li>
+					<li><a routerLink="/bia/internal-ra-questions">Internal RA Questions</a></li>
+					<li><a routerLink="/bia/mission-critical">Mission Critical</a></li>
+					<li><a routerLink="/bia/overide-impact-critically-rating">Overide Impact Critically Rating</a></li>
+					<li><a routerLink="/bia/overide-mission-critical">Overide Mission Critical</a></li>
+					<li><a routerLink="/bia/peak-times">Peak Times</a></li>
+					<li><a routerLink="/bia/services">Service</a></li>
+					<li><a routerLink="/bia/sub-products">Sub Products</a></li>
+					<li><a routerLink="/bia/sub-services">Sub Services</a></li>
+				</ul>
+			</nav>
+
+		</div>
+
+
+
+		<div class="col">
+			<router-outlet></router-outlet>
+
+		</div>
+
+	</div>
+
+</div>

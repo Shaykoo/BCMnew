@@ -1,0 +1,124 @@
+<div class="kt-subheader   kt-grid__item" id="kt_subheader">
+	<div class="kt-container ">
+		<div class="kt-subheader__main">
+			<h3 class="kt-subheader__title">
+
+				Dashboard </h3>
+
+			<span class="kt-subheader__separator kt-hidden"></span>
+			<div class="kt-subheader__breadcrumbs">
+				<a href="#" class="kt-subheader__breadcrumbs-home"><i class="flaticon2-shelter"></i></a>
+				<span class="kt-subheader__breadcrumbs-separator"></span>
+				<a href="" class="kt-subheader__breadcrumbs-link">
+					BIA </a>
+				<span class="kt-subheader__breadcrumbs-separator"></span>
+				<a href="" class="kt-subheader__breadcrumbs-link">
+					RPO </a>
+				<!-- <span class="kt-subheader__breadcrumbs-link kt-subheader__breadcrumbs-link--active">Active link</span> -->
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<!-- Add New Product Form -->
+
+<div id="addForm" class="kt-portlet" [ngbCollapse]="addFormisCollapsed">
+	<div class="kt-portlet__head">
+		<div class="kt-portlet__head-label">
+			<h3 class="kt-portlet__head-title kt-font-primary">
+				Add New RPO
+			</h3>
+		</div>
+
+	</div>
+	<form class="kt-form">
+		<div class="kt-portlet__body">
+			<div class="form-group">
+				<label>RPO *</label>
+				<input type="text" class="form-control" aria-describedby="rpo" placeholder="">
+      </div>
+      <div class="form-group">
+				<label>Description</label>
+				<input type="description" class="form-control" aria-describedby="description" placeholder="">
+			</div>
+
+			<div class="form-group">
+				<label for="exampleSelect1">Status</label>
+				<select class="form-control" id="exampleSelect1">
+					<option>Active</option>
+					<option>Inactive</option>
+				</select>
+			</div>
+		</div>
+		<div class="kt-portlet__foot">
+			<div class="kt-form__actions">
+				<button type="reset" class="btn btn-primary">Submit</button>
+				<button type="reset" class="btn btn-secondary" (click)="addFormisCollapsed = !addFormisCollapsed" [attr.aria-expanded]="!addFormisCollapsed" aria-controls="addForm">Cancel</button>
+			</div>
+		</div>
+	</form>
+</div> 
+
+<form>
+  <span class="text">Weather you want to add 'NA' as RPO</span>
+  <span class="radio-btn"></span>
+  <input type="radio" name="gender" value="male" checked> Yes
+</form>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+  <div class="kt-portlet kt-portlet__body">
+    <div class="kt-datatable kt-datatable--default kt-datatable--brand  kt-datatable--loaded">
+      <div class="kt-portlet__head">
+        <div class="kt-portlet__head-label">
+          <h3 class="kt-portlet__head-title kt-font-primary">
+            RPO 
+            <mat-form-field>
+              <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
+            </mat-form-field>
+          </h3>
+        </div>
+        <div class="kt-portlet__head-toolbar">
+          <div class="kt-portlet__head-actions">
+            <button type="button" class="btn btn-primary" (click)="addFormisCollapsed = !addFormisCollapsed" [attr.aria-expanded]="!addFormisCollapsed" aria-controls="addForm"><i class="fa fa-plus"></i> Add New</button>
+          </div>
+        </div>
+      </div>
+    <table mat-table [dataSource]="dataSource" matSort>
+  
+      <!-- RPO Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> RPO </th>
+        <!-- <td class="kt-datatable__cell--center kt-datatable__cell kt-datatable__cell--check" data-field="RecordID"><span style="width: 20px;"><label class="kt-checkbox kt-checkbox--single kt-checkbox--solid"><input type="checkbox" value="2">&nbsp;<span></span></label></span></td> -->
+        <td mat-cell *matCellDef="let row"> <input class="serial-checkbox" type="checkbox" value="2"> </td>
+      </ng-container>
+  
+      <!-- Status Column -->
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef> Status </th>
+        <!-- <td mat-cell *matCellDef="let row"> {{row.staus}} </td> -->
+        <td mat-cell *matCellDef="let row"> Active </td>
+
+      </ng-container>
+  
+      <!-- Description Column -->
+      <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef> Description </th>
+        <td mat-cell *matCellDef="let row"> {{row.description}} </td>
+      </ng-container>
+  
+      <!-- Action Column -->
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef> Action </th>
+        <td mat-cell *matCellDef="let row" [style.color]="row.action"> <a title="Edit details" class="btn btn-sm btn-clean btn-icon btn-icon-sm"> <i class="flaticon2-file"></i> </a> <a title="Delete" class="btn btn-sm btn-clean btn-icon btn-icon-sm" (click)="removeSelectedRows()"> <i class=" flaticon-delete-1 "></i> </a> </td>
+        <!-- <a title="Edit details" class="btn btn-sm btn-clean btn-icon btn-icon-sm"> <i class="flaticon2-file"></i> </a> <a title="Delete" class="btn btn-sm btn-clean btn-icon btn-icon-sm"> <i class=" flaticon-delete-1 "></i> </a> -->
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+      </tr>
+    </table>
+  </div>
+    
+  </div>
+  

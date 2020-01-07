@@ -1,0 +1,24 @@
+:host {
+	::ng-deep {
+		ngb-tabset > .nav-tabs {
+			display: none;
+		}
+	}
+
+	.example-container {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background: #eee;
+	  }
+
+	  .hamburger .navbarclick{
+		  position: absolute;
+		  font-size: 32px;
+		  top:10;
+		  left:150;
+	  }
+	  
+}

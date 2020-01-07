@@ -1,0 +1,297 @@
+<div class="kt-subheader   kt-grid__item" id="kt_subheader">
+	<div class="kt-container ">
+		<div class="kt-subheader__main">
+			<h3 class="kt-subheader__title">
+
+				Dashboard </h3>
+
+			<span class="kt-subheader__separator kt-hidden"></span>
+			<div class="kt-subheader__breadcrumbs">
+				<a href="#" class="kt-subheader__breadcrumbs-home"><i class="flaticon2-shelter"></i></a>
+				<span class="kt-subheader__breadcrumbs-separator"></span>
+				<a href="" class="kt-subheader__breadcrumbs-link">
+					BIA </a>
+				<span class="kt-subheader__breadcrumbs-separator"></span>
+				<a href="" class="kt-subheader__breadcrumbs-link">
+					Products </a>
+				<!-- <span class="kt-subheader__breadcrumbs-link kt-subheader__breadcrumbs-link--active">Active link</span> -->
+			</div>
+		</div>
+
+	</div>
+</div>
+
+
+
+<!-- Add New Product Form -->
+
+ <div id="addForm" class="kt-portlet" [ngbCollapse]="addFormisCollapsed">
+	<div class="kt-portlet__head">
+		<div class="kt-portlet__head-label">
+			<h3 class="kt-portlet__head-title kt-font-primary">
+				Add New Product
+			</h3>
+		</div>
+
+	</div>
+	<form class="kt-form">
+		<div class="kt-portlet__body">
+
+			<div class="form-group">
+				<label>Product *</label>
+				<input type="email" class="form-control" aria-describedby="emailHelp" placeholder="">
+			</div>
+
+			<div class="form-group">
+				<label for="exampleSelect1">Status</label>
+				<select class="form-control" id="exampleSelect1">
+					<option>Active</option>
+					<option>Inactive</option>
+
+				</select>
+			</div>
+
+		</div>
+		<div class="kt-portlet__foot">
+			<div class="kt-form__actions">
+				<button type="reset" class="btn btn-primary">Submit</button>
+				<button type="reset" class="btn btn-secondary" (click)="addFormisCollapsed = !addFormisCollapsed" [attr.aria-expanded]="!addFormisCollapsed" aria-controls="addForm">Cancel</button>
+			</div>
+		</div>
+	</form>
+</div> 
+
+
+
+<!-- Edit Product Form -->
+
+ <!-- <div id="editForm" class="kt-portlet" [ngbCollapse]="editFormIsCollapsed">
+        <div class="kt-portlet__head">
+            <div class="kt-portlet__head-label">
+                <h3 class="kt-portlet__head-title kt-font-primary">
+                    Add New Product
+                </h3>
+            </div>
+    
+        </div>
+        <form class="kt-form">
+            <div class="kt-portlet__body">
+    
+                <div class="form-group">
+                    <label>Product *</label>
+                    <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="">
+                </div>
+    
+                <div class="form-group">
+                    <label for="exampleSelect1">Status</label>
+                    <select class="form-control" id="exampleSelect1">
+                        <option>Active</option>
+                        <option>Inactive</option>
+    
+                    </select>
+                </div>
+    
+            </div>
+            <div class="kt-portlet__foot">
+                <div class="kt-form__actions">
+                    <button type="reset" class="btn btn-primary">Submit</button>
+                    <button type="reset" class="btn btn-secondary" (click)="addFormisCollapsed = !addFormisCollapsed" [attr.aria-expanded]="!addFormisCollapsed" aria-controls="addForm">Cancel</button>
+                </div>
+            </div>
+        </form>
+ </div> -->
+     
+
+
+<!-- Upload  -->
+
+<!-- <div id="uploadForm" class="kt-portlet" [ngbCollapse]="uploadIsCollapsed">
+
+	<div class="kt-portlet__head">
+		<div class="kt-portlet__head-label">
+			<h3 class="kt-portlet__head-title kt-font-primary">
+				Products Upload
+			</h3>
+		</div>
+
+	</div>
+
+
+	<form class="kt-form">
+		<div class="kt-portlet__body">
+
+			<div class="form-group">
+				<label>Uplad File</label>
+				<div></div>
+				<div class="custom-file">
+					<input type="file" class="custom-file-input" id="customFile">
+					<label class="custom-file-label" for="customFile">Choose file</label>
+				</div>
+			</div>
+
+		</div>
+		<div class="kt-portlet__foot">
+			<div class="kt-form__actions">
+				<button type="reset" class="btn btn-primary">Submit</button>
+				<button type="reset" class="btn btn-secondary" (click)="uploadIsCollapsed = !uploadIsCollapsed" [attr.aria-expanded]="!uploadIsCollapsed" aria-controls="uploadForm">Cancel</button>
+			</div>
+		</div>
+	</form>
+
+</div> -->
+
+<div class="kt-portlet">
+	<div class="kt-portlet__head">
+		<div class="kt-portlet__head-label">
+			<h3 class="kt-portlet__head-title kt-font-primary">
+				Products <small>button toolbar</small>
+			</h3>
+		</div>
+		<div class="kt-portlet__head-toolbar">
+			<div class="kt-portlet__head-actions">
+				<button type="button" class="btn btn-primary" (click)="addFormisCollapsed = !addFormisCollapsed" [attr.aria-expanded]="!addFormisCollapsed" aria-controls="addForm"><i class="fa fa-plus"></i> Add New</button>
+				<button type="button" class="btn btn-secondary" (click)="uploadIsCollapsed = !uploadIsCollapsed" [attr.aria-expanded]="!uploadIsCollapsed" aria-controls="uploadForm" style="margin-left: 15px;"><i class="fa fa-upload"></i> Upload Template</button>
+				<button type="button" class="btn btn-secondary ml-10" style="margin-left: 15px;"><i class="fa fa-download"></i> Download Template</button>
+
+			</div>
+		</div>
+	</div>
+	<div class="kt-portlet__body">
+		<div class="kt-datatable kt-datatable--default kt-datatable--brand  kt-datatable--loaded" id="local_record_selection" style="">
+			<table class="kt-datatable__table" style="display: block; ">
+				<thead class="kt-datatable__head">
+					<tr class="kt-datatable__row" style="left: 0px;">
+						<th data-field="RecordID" class="kt-datatable__cell--center kt-datatable__cell kt-datatable__cell--check"><span style="width: 20px;"><label class="kt-checkbox kt-checkbox--single kt-checkbox--all kt-checkbox--solid"><input type="checkbox">&nbsp;<span></span></label></span></th>
+						<th data-field="OrderID" class="kt-datatable__cell kt-datatable__cell--sort"><span style="width: 176px;">Product</span></th>
+						<th data-field="Country" class="kt-datatable__cell kt-datatable__cell--sort"><span style="width: 176px;">Status</span></th>
+						<th data-field="ShipAddress" class="kt-datatable__cell kt-datatable__cell--sort"><span style="width: 176px;">Action</span></th>
+					</tr>
+				</thead>
+				<tbody style="max-height: 295px;" class="kt-datatable__body ps ps--active-y">
+					<tr data-row="0" class="kt-datatable__row" style="left: 0px;">
+						<td class="kt-datatable__cell--center kt-datatable__cell kt-datatable__cell--check" data-field="RecordID"><span style="width: 20px;"><label class="kt-checkbox kt-checkbox--single kt-checkbox--solid"><input type="checkbox" value="1">&nbsp;<span></span></label></span></td>
+						<td data-field="OrderID" class="kt-datatable__cell"><span style="width: 176px;">61715-075</span></td>
+						<td data-field="Country" class="kt-datatable__cell"><span style="width: 176px;">Active</span></td>
+						<td class="kt-datatable__cell--left kt-datatable__cell" data-field="Actions" data-autohide-disabled="false"><span style="overflow: visible; position: relative; width: 180px;">
+								<div class="dropdown"> <a data-toggle="dropdown" class="btn btn-sm btn-clean btn-icon btn-icon-sm"> <i class=" flaticon2-information  "></i>
+             </a>
+								</div> <a title="Edit details" class="btn btn-sm btn-clean btn-icon btn-icon-sm"> <i class="flaticon2-file"></i> </a> <a title="Delete" class="btn btn-sm btn-clean btn-icon btn-icon-sm"> <i class=" flaticon-delete-1 "></i> </a>
+							</span></td>
+					</tr>
+					<tr data-row="1" class="kt-datatable__row kt-datatable__row--even" style="left: 0px;">
+						<td class="kt-datatable__cell--center kt-datatable__cell kt-datatable__cell--check" data-field="RecordID"><span style="width: 20px;"><label class="kt-checkbox kt-checkbox--single kt-checkbox--solid"><input type="checkbox" value="2">&nbsp;<span></span></label></span></td>
+						<td data-field="OrderID" class="kt-datatable__cell"><span style="width: 176px;">63629-4697</span></td>
+						<td data-field="Country" class="kt-datatable__cell"><span style="width: 176px;">Active</span></td>
+						<td class="kt-datatable__cell--left kt-datatable__cell" data-field="Actions" data-autohide-disabled="false"><span style="overflow: visible; position: relative; width: 180px;">
+								<div class="dropdown"> <a data-toggle="dropdown" class="btn btn-sm btn-clean btn-icon btn-icon-sm">  </a>
+								</div> <a title="Edit details" class="btn btn-sm btn-clean btn-icon btn-icon-sm"> <i class="flaticon2-file"></i> </a> <a title="Delete" class="btn btn-sm btn-clean btn-icon btn-icon-sm"> <i class=" flaticon-delete-1 "></i> </a>
+							</span></td>
+					</tr>
+					<tr data-row="2" class="kt-datatable__row" style="left: 0px;">
+						<td class="kt-datatable__cell--center kt-datatable__cell kt-datatable__cell--check" data-field="RecordID"><span style="width: 20px;"><label class="kt-checkbox kt-checkbox--single kt-checkbox--solid"><input type="checkbox" value="3">&nbsp;<span></span></label></span></td>
+						<td data-field="OrderID" class="kt-datatable__cell"><span style="width: 176px;">68084-123</span></td>
+						<td data-field="Country" class="kt-datatable__cell"><span style="width: 176px;">InActive</span></td>
+						<td class="kt-datatable__cell--left kt-datatable__cell" data-field="Actions" data-autohide-disabled="false"><span style="overflow: visible; position: relative; width: 180px;">
+								<div class="dropdown"> <a data-toggle="dropdown" class="btn btn-sm btn-clean btn-icon btn-icon-sm">  </a>
+								</div> <a title="Edit details" class="btn btn-sm btn-clean btn-icon btn-icon-sm"> <i class="flaticon2-file"></i> </a> <a title="Delete" class="btn btn-sm btn-clean btn-icon btn-icon-sm"> <i class=" flaticon-delete-1 "></i> </a>
+							</span></td>
+					</tr>
+					<tr data-row="3" class="kt-datatable__row kt-datatable__row--even" style="left: 0px;">
+						<td class="kt-datatable__cell--center kt-datatable__cell kt-datatable__cell--check" data-field="RecordID"><span style="width: 20px;"><label class="kt-checkbox kt-checkbox--single kt-checkbox--solid"><input type="checkbox" value="4">&nbsp;<span></span></label></span></td>
+						<td data-field="OrderID" class="kt-datatable__cell"><span style="width: 176px;">67457-428</span></td>
+						<td data-field="Country" class="kt-datatable__cell"><span style="width: 176px;">Active</span></td>
+						<td class="kt-datatable__cell--left kt-datatable__cell" data-field="Actions" data-autohide-disabled="false"><span style="overflow: visible; position: relative; width: 180px;">
+								<div class="dropdown"> <a data-toggle="dropdown" class="btn btn-sm btn-clean btn-icon btn-icon-sm">  </a>
+								</div> <a title="Edit details" class="btn btn-sm btn-clean btn-icon btn-icon-sm"> <i class="flaticon2-file"></i> </a> <a title="Delete" class="btn btn-sm btn-clean btn-icon btn-icon-sm"> <i class=" flaticon-delete-1 "></i> </a>
+							</span></td>
+					</tr>
+					<tr data-row="4" class="kt-datatable__row" style="left: 0px;">
+						<td class="kt-datatable__cell--center kt-datatable__cell kt-datatable__cell--check" data-field="RecordID"><span style="width: 20px;"><label class="kt-checkbox kt-checkbox--single kt-checkbox--solid"><input type="checkbox" value="5">&nbsp;<span></span></label></span></td>
+						<td data-field="OrderID" class="kt-datatable__cell"><span style="width: 176px;">31722-529</span></td>
+						<td data-field="Country" class="kt-datatable__cell"><span style="width: 176px;">InActive</span></td>
+						<td class="kt-datatable__cell--left kt-datatable__cell" data-field="Actions" data-autohide-disabled="false"><span style="overflow: visible; position: relative; width: 180px;">
+								<div class="dropdown"> <a data-toggle="dropdown" class="btn btn-sm btn-clean btn-icon btn-icon-sm">  </a>
+								</div> <a title="Edit details" class="btn btn-sm btn-clean btn-icon btn-icon-sm"> <i class="flaticon2-file"></i> </a> <a title="Delete" class="btn btn-sm btn-clean btn-icon btn-icon-sm"> <i class=" flaticon-delete-1 "></i> </a>
+							</span></td>
+					</tr>
+					<tr data-row="5" class="kt-datatable__row kt-datatable__row--even" style="left: 0px;">
+						<td class="kt-datatable__cell--center kt-datatable__cell kt-datatable__cell--check" data-field="RecordID"><span style="width: 20px;"><label class="kt-checkbox kt-checkbox--single kt-checkbox--solid"><input type="checkbox" value="6">&nbsp;<span></span></label></span></td>
+						<td data-field="OrderID" class="kt-datatable__cell"><span style="width: 176px;">64117-168</span></td>
+						<td data-field="Country" class="kt-datatable__cell"><span style="width: 176px;">Active</span></td>
+						<td class="kt-datatable__cell--left kt-datatable__cell" data-field="Actions" data-autohide-disabled="false"><span style="overflow: visible; position: relative; width: 180px;">
+								<div class="dropdown"> <a data-toggle="dropdown" class="btn btn-sm btn-clean btn-icon btn-icon-sm">  </a>
+								</div> <a title="Edit details" class="btn btn-sm btn-clean btn-icon btn-icon-sm"> <i class="flaticon2-file"></i> </a> <a title="Delete" class="btn btn-sm btn-clean btn-icon btn-icon-sm"> <i class=" flaticon-delete-1 "></i> </a>
+							</span></td>
+					</tr>
+					<tr data-row="6" class="kt-datatable__row" style="left: 0px;">
+						<td class="kt-datatable__cell--center kt-datatable__cell kt-datatable__cell--check" data-field="RecordID"><span style="width: 20px;"><label class="kt-checkbox kt-checkbox--single kt-checkbox--solid"><input type="checkbox" value="7">&nbsp;<span></span></label></span></td>
+						<td data-field="OrderID" class="kt-datatable__cell"><span style="width: 176px;">43857-0331</span></td>
+						<td data-field="Country" class="kt-datatable__cell"><span style="width: 176px;">China CN</span></td>
+						<td class="kt-datatable__cell--left kt-datatable__cell" data-field="Actions" data-autohide-disabled="false"><span style="overflow: visible; position: relative; width: 180px;">
+								<div class="dropdown"> <a data-toggle="dropdown" class="btn btn-sm btn-clean btn-icon btn-icon-sm">  </a>
+								</div> <a title="Edit details" class="btn btn-sm btn-clean btn-icon btn-icon-sm"> <i class="flaticon2-file"></i> </a> <a title="Delete" class="btn btn-sm btn-clean btn-icon btn-icon-sm"> <i class=" flaticon-delete-1 "></i> </a>
+							</span></td>
+					</tr>
+					<tr data-row="7" class="kt-datatable__row kt-datatable__row--even" style="left: 0px;">
+						<td class="kt-datatable__cell--center kt-datatable__cell kt-datatable__cell--check" data-field="RecordID"><span style="width: 20px;"><label class="kt-checkbox kt-checkbox--single kt-checkbox--solid"><input type="checkbox" value="8">&nbsp;<span></span></label></span></td>
+						<td data-field="OrderID" class="kt-datatable__cell"><span style="width: 176px;">64980-196</span></td>
+						<td data-field="Country" class="kt-datatable__cell"><span style="width: 176px;">Inactive</span></td>
+						<td class="kt-datatable__cell--left kt-datatable__cell" data-field="Actions" data-autohide-disabled="false"><span style="overflow: visible; position: relative; width: 180px;">
+								<div class="dropdown"> <a data-toggle="dropdown" class="btn btn-sm btn-clean btn-icon btn-icon-sm">  </a>
+								</div> <a title="Edit details" class="btn btn-sm btn-clean btn-icon btn-icon-sm"> <i class="flaticon2-file"></i> </a> <a title="Delete" class="btn btn-sm btn-clean btn-icon btn-icon-sm"> <i class=" flaticon-delete-1 "></i> </a>
+							</span></td>
+					</tr>
+					<tr data-row="8" class="kt-datatable__row" style="left: 0px;">
+						<td class="kt-datatable__cell--center kt-datatable__cell kt-datatable__cell--check" data-field="RecordID"><span style="width: 20px;"><label class="kt-checkbox kt-checkbox--single kt-checkbox--solid"><input type="checkbox" value="9">&nbsp;<span></span></label></span></td>
+						<td data-field="OrderID" class="kt-datatable__cell"><span style="width: 176px;">0404-0360</span></td>
+						<td data-field="Country" class="kt-datatable__cell"><span style="width: 176px;">Active</span></td>
+						<td class="kt-datatable__cell--left kt-datatable__cell" data-field="Actions" data-autohide-disabled="false"><span style="overflow: visible; position: relative; width: 180px;">
+								<div class="dropdown"> <a data-toggle="dropdown" class="btn btn-sm btn-clean btn-icon btn-icon-sm">  </a>
+								</div> <a title="Edit details" class="btn btn-sm btn-clean btn-icon btn-icon-sm"> <i class="flaticon2-file"></i> </a> <a title="Delete" class="btn btn-sm btn-clean btn-icon btn-icon-sm"> <i class=" flaticon-delete-1 "></i> </a>
+							</span></td>
+					</tr>
+
+					<div class="ps__rail-x" style="left: 0px; bottom: -83px;">
+						<div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+					</div>
+					<div class="ps__rail-y" style="top: 83px; height: 295px; right: 0px;">
+						<div class="ps__thumb-y" tabindex="0" style="top: 44px; height: 156px;"></div>
+					</div>
+				</tbody>
+			</table>
+			<div class="kt-datatable__pager kt-datatable--paging-loaded">
+				<ul class="kt-datatable__pager-nav">
+					<li><a title="First" class="kt-datatable__pager-link kt-datatable__pager-link--first kt-datatable__pager-link--disabled" data-page="1" disabled="disabled"><i class="flaticon2-fast-back"></i></a></li>
+					<li><a title="Previous" class="kt-datatable__pager-link kt-datatable__pager-link--prev kt-datatable__pager-link--disabled" data-page="1" disabled="disabled"><i class="flaticon2-back"></i></a></li>
+					<li style=""></li>
+					<li style="display: none;"><input type="text" class="kt-pager-input form-control" title="Page number"></li>
+					<li><a class="kt-datatable__pager-link kt-datatable__pager-link-number kt-datatable__pager-link--active" data-page="1" title="1">1</a></li>
+					<li><a class="kt-datatable__pager-link kt-datatable__pager-link-number" data-page="2" title="2">2</a></li>
+					<li><a class="kt-datatable__pager-link kt-datatable__pager-link-number" data-page="3" title="3">3</a></li>
+					<li><a class="kt-datatable__pager-link kt-datatable__pager-link-number" data-page="4" title="4">4</a></li>
+					<li style=""></li>
+					<li><a title="Next" class="kt-datatable__pager-link kt-datatable__pager-link--next" data-page="2"><i class="flaticon2-next"></i></a></li>
+					<li><a title="Last" class="kt-datatable__pager-link kt-datatable__pager-link--last" data-page="4"><i class="flaticon2-fast-next"></i></a></li>
+				</ul>
+				<div class="kt-datatable__pager-info">
+					<div class="dropdown bootstrap-select kt-datatable__pager-size" style="width: 60px;"><button type="button" class="btn dropdown-toggle btn-light" data-toggle="dropdown" role="combobox" aria-owns="bs-select-5" aria-haspopup="listbox" aria-expanded="false" title="Select page size">
+							<div class="filter-option">
+								<div class="filter-option-inner">
+									<div class="filter-option-inner-inner">10</div>
+								</div>
+							</div>
+						</button>
+						<div class="dropdown-menu ">
+							<div class="inner show" role="listbox" id="bs-select-5" tabindex="-1">
+								<ul class="dropdown-menu inner show" role="presentation"></ul>
+							</div>
+						</div>
+					</div><span class="kt-datatable__pager-detail">Showing 1 - 10 of 40</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+

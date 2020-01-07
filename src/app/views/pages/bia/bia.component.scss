@@ -1,0 +1,67 @@
+
+/* reset our lists to remove bullet points and padding */
+.mainmenu, .submenu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  box-shadow: 0px 0px 13px 0px
+  rgba(82, 63, 105, 0.05);
+}
+
+.mainmenu{
+  border-radius: 4px;
+  height: 100%;
+}
+
+/* make ALL links (main and submenu) have padding and background color */
+.mainmenu a {
+  display: block;
+  text-decoration: none;
+  padding: 10px;
+  color: #000;
+  font-size: 14px;
+
+background-color:
+#ffffff;
+
+}
+
+/* add hover behaviour */
+.mainmenu a:hover {
+    background-color: #f9f9fc;
+}
+
+
+/* when hovering over a .mainmenu item,
+  display the submenu inside it.
+  we're changing the submenu's max-height from 0 to 200px;
+*/
+
+.mainmenu li:hover .submenu {
+  display: block;
+  max-height: 200px;
+}
+
+/*
+  we now overwrite the background-color for .submenu links only.
+  CSS reads down the page, so code at the bottom will overwrite the code at the top.
+*/
+
+.submenu a {
+  background-color: #f9f9fc;
+}
+
+/* hover behaviour for links inside .submenu */
+.submenu a:hover {
+  background-color: #e8e8f8;
+}
+
+/* this is the initial state of all submenus.
+  we set it to max-height: 0, and hide the overflowed content.
+*/
+.submenu {
+  overflow: hidden;
+  max-height: 0;
+  -webkit-transition: all 0.5s ease-out;
+}

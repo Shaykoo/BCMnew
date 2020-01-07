@@ -1,0 +1,30 @@
+<!-- begin: Header -->
+<div ktHeader #ktHeader class="kt-header kt-grid__item" [ngClass]="htmlClassService.getClasses('header', true)" id="kt_header">
+	<ngb-progressbar class="kt-loading-bar" *ngIf="(loader.progress$|async) > 0" [value]="loader.progress$|async" height="3px"></ngb-progressbar>
+
+	<!-- begin:: Brand -->
+	<kt-brand></kt-brand>
+	<!-- end:: Brand -->
+
+	<!-- begin:: Title -->
+	<h3 class="kt-header__title kt-grid__item">
+		<img src="./../../../../assets/media/logos/BCM.png" style="height: 60px;" alt="">
+	</h3>
+	<!-- end:: Title -->
+
+	<div class="hamburger kt-hidden-mobile kt-hidden-tablet">
+	
+		<i class="flaticon-menu-1" style="font-size:32px; line-height:2.5;" (click)="hideNav()"></i>	
+	</div>
+
+	<!-- begin: Header Menu -->
+	<kt-menu-horizontal *ngIf="menuHeaderDisplay"></kt-menu-horizontal>
+	<!-- end: Header Menu -->
+
+	<!-- begin:: Header Topbar -->
+	<!-- empty div to fix topbar to stay on the right when menu-horizontal is hidden -->
+	<div *ngIf="!menuHeaderDisplay"></div>
+	<kt-topbar></kt-topbar>
+	<!-- end:: Header Topbar -->
+</div>
+<!-- end: Header -->
